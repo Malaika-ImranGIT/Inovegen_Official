@@ -1,0 +1,25 @@
+ body{background:#050B14;color:#E2E8F0;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+ 
+    .neon-text{text-shadow:0 0 10px rgba(45,212,191,.5),0 0 20px rgba(45,212,191,.3)}
+    .neon-border{box-shadow:0 0 15px rgba(45,212,191,.15),inset 0 0 15px rgba(45,212,191,.05);border:1px solid rgba(45,212,191,.3);transition:all .4s ease}
+    .neon-border:hover{box-shadow:0 0 25px rgba(45,212,191,.4),inset 0 0 20px rgba(45,212,191,.1);border-color:rgba(45,212,191,.8);transform:translateY(-4px)}
+    .glass{background:rgba(10,21,37,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08)}
+    /* FAIL-SAFE reveal: visible by default, animation optional */
+    .reveal{will-change:transform,opacity}
+    .reveal.in{animation:revealUp .8s cubic-bezier(.5,0,0,1) both}
+    @keyframes revealUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#050B14}::-webkit-scrollbar-thumb{background:#112240;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#2DD4BF}
+    .faq-content{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+    .faq-item.open .faq-content{max-height:300px;padding-bottom:1.5rem}
+    .faq-item.open .faq-icon{transform:rotate(180deg);color:#2DD4BF}
+    .faq-icon{transition:transform .3s ease,color .3s ease}
+    .glow{position:absolute;border-radius:9999px;pointer-events:none;z-index:0}
+    /* RIGHT-SIDE SCROLL NAV */
+    .side-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;gap:20px}
+    @media(min-width:1024px){.side-nav{display:flex}}
+    .side-link{display:flex;align-items:center;justify-content:flex-end;gap:12px;text-decoration:none;cursor:pointer}
+    .side-link .label{font-size:.75rem;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;color:#64748b;opacity:0;transform:translateX(8px);transition:all .3s ease;white-space:nowrap}
+    .side-link .dot{width:10px;height:10px;border-radius:50%;border:2px solid #475569;background:transparent;transition:all .3s ease}
+    .side-link:hover .label,.side-link.active .label{opacity:1;transform:translateX(0);color:#2DD4BF}
+    .side-link:hover .dot,.side-link.active .dot{border-color:#2DD4BF;background-color:#2DD4BF;box-shadow:0 0 10px rgba(45,212,191,.6);transform:scale(1.3)}
+  
